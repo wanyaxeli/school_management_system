@@ -5,9 +5,12 @@ export default function Students() {
     const handleAddStudent=()=>{
         navigate('/addstudents')
     }
+    const handleAllStudent=()=>{
+        navigate('/allstudents')
+    }
   return (
     <div className='studentsWrapper'>
-       <div className='studentcard1'>
+       <div onClick={handleAllStudent} className='studentcard1'>
         <h4>view all students</h4>
         <i className="fa fa-eye" aria-hidden="true"></i>
        </div>

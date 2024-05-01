@@ -1,6 +1,7 @@
 import React from 'react'
 import {Route,Routes} from 'react-router-dom'
 import AddStudents from '../pages/AddStudents'
+import AllStudents from '../pages/AllStudents'
 import Dashboard from '../pages/Dashboard'
 import Home from '../pages/Home'
 import Students from '../pages/Students'
@@ -12,6 +13,7 @@ export default function AppRoutes() {
             <Route index element={<Dashboard/>}/>
             <Route path='/students' element={<Students/>}/>
             <Route path='/addstudents' element={<AddStudents/>}/>
+            <Route path='/allstudents' element={<AllStudents/>}/>
         </Route>
     </Routes>
   )
