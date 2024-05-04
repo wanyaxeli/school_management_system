@@ -9,7 +9,7 @@ export default function Students() {
         navigate('/allstudents')
     }
   return (
-    <div className='studentsWrapper'>
+    <div className='studentsWrapper students'>
        <div onClick={handleAllStudent} className='studentcard1'>
         <h4>view all students</h4>
         <i className="fa fa-eye" aria-hidden="true"></i>

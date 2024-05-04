@@ -15,6 +15,15 @@ export default function Dashboard() {
     const hadleToStudents=()=>{
      navigate('/students')
     }
+const handleToClasses=()=>{
+    navigate('/classes')
+}
+const handleToSubject=()=>{
+    navigate('/subject')
+}
+const handleToStaff=()=>{
+    navigate('/staff')
+}
   return (
     <div className='dashboardWrapper'>
         <div className='card'>
@@ -29,13 +38,13 @@ export default function Dashboard() {
                 <img src={student}/>
             </div>
         </div>
-        <div className='card'>
+        <div className='card' onClick={handleToClasses}>
             <h4>class manager</h4>
             <div className='cardImgWrapper'>
                 <img src={classes}/>
             </div>
         </div>
-        <div className='card'>
+        <div className='card' onClick={handleToSubject}>
             <h4>subject manager</h4>
             <div className='cardImgWrapper'>
                 <img src={subjects}/>
@@ -53,7 +62,7 @@ export default function Dashboard() {
                 <img src={fees}/>
             </div>
         </div>
-        <div className='card'>
+        <div className='card' onClick={handleToStaff}>
             <h4>staff manager</h4>
             <div className='cardImgWrapper'>
                 <img src={staff}/>
