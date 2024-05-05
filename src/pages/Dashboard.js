@@ -24,6 +24,12 @@ const handleToSubject=()=>{
 const handleToStaff=()=>{
     navigate('/staff')
 }
+const handleToFees=()=>{
+    navigate('/fee')
+}
+const handleToResults=()=>{
+    navigate('/results')
+}
   return (
     <div className='dashboardWrapper'>
         <div className='card'>
@@ -50,14 +56,14 @@ const handleToStaff=()=>{
                 <img src={subjects}/>
             </div>
         </div>
-        <div className='card'>
+        <div className='card' onClick={handleToResults}>
             <h4>result manager</h4>
             <div className='cardImgWrapper'>
                 <img src={results}/>
             </div>
         </div>
-        <div className='card'>
-            <h4>fee manager</h4>
+        <div className='card' onClick={handleToFees}>
+            <h4>Accounts manager</h4>
             <div className='cardImgWrapper'>
                 <img src={fees}/>
             </div>

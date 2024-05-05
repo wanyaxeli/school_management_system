@@ -1,5 +1,6 @@
 import React from 'react'
 import worker from '../assets/admin.png'
+import SearchBar from '../components/SearchBar'
 export default function Workers() {
   return (
     <div className='teacherWrapper'>
@@ -39,6 +40,7 @@ export default function Workers() {
                 </div>
             </form>
         </div>
+         <SearchBar/>
         <h4>All Employees</h4>
         <div>
         <div className='teacherDetailHeader'>

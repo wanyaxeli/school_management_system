@@ -22,7 +22,7 @@ export default function Home() {
                     <li><i className="fa fa-users" aria-hidden="true"></i> workers</li>
                     <li><i className="fa fa-book" aria-hidden="true"></i> subjects</li>
                     <li><i className="fa fa-users" aria-hidden="true"></i> students</li>
-                    <li><i className="fa fa-money" aria-hidden="true"></i> students fees</li>
+                    <li><i className="fa fa-money" aria-hidden="true"></i> Accounts</li>
                     <li> <i className="fa fa-file-text" aria-hidden="true"></i> exams and  timetable</li>
                     <li><i className="fa fa-file-text" aria-hidden="true"></i> results</li>
                 </ul>

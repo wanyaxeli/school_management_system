@@ -12,11 +12,17 @@ export default function Staff() {
     <div className='studentsWrapper staffWrapper'>
         <div  className='studentcard1' onClick={handleToTeachers}>
         <h4>view all teachers</h4>
+        <div className='staffTotalWrapper'>
         <i className="fa fa-eye" aria-hidden="true"></i>
+        <span>total: 200</span>
+        </div>
         </div>
         <div className='studentcard1 addStudent' onClick={handleToWorkers}>
         <h4>view all workers</h4>
-        <i className="fa fa-plus-circle" aria-hidden="true"></i>
+        <div className='staffTotalWrapper'>
+        <i className="fa fa-eye" aria-hidden="true"></i>
+        <span>total: 200</span>
+        </div>
         </div>
  </div>
   )

@@ -1,62 +1,40 @@
 import React from 'react'
 import teacher from '../assets/admin.png'
-import SearchBar from '../components/SearchBar'
-export default function Teachers() {
+export default function AllFeeRecord() {
   return (
-    <div className='teacherWrapper'>
-        <h3>Teacher registration</h3>
-        <div className='teacherFormWrapper'>
-            <form>
+    <div className='allFeeRecordWrapper'>
+        <div className='allfeeRecordContainer'>
+            <h3>Accounts</h3>
+            <div className='feeSearchWrapper'>
+              <form>
                 <table>
                     <tbody>
                         <tr>
-                            <td>teacher number</td>
-                            <td><input type='text'/></td>
-                            <td>teacher's name</td>
-                            <td><input type='text'/></td>
-                        </tr>
-                        <tr>    
-                            <td>ID number</td>
-                            <td><input type='text'/></td>
-                            <td>gender</td>
-                            <td><input type='text'/></td>
-                        </tr>
-                        <tr>
-                            <td>teacher's name</td>
-                            <td><input type='text'/></td>
-                            <td>teacher number</td>
-                            <td><input type='text'/></td>
-                        </tr>
-                        <tr>
-                            <td>email</td>
-                            <td><input type='email'/></td>
-                            <td>date of appointment</td>
-                            <td><input type='text'/></td>
+                            <td><input type='search' placeholder='enter admission ..'/></td>
+                            <td><input type='search' placeholder='enter name..'/></td>
+                            <td><input type='search' placeholder='enter class'/></td>
+                            <td><button>search</button></td>
                         </tr>
                     </tbody>
                 </table>
-                <div>
-                    <button>register</button>
-                </div>
-            </form>
+              </form>
+            </div>
         </div>
-        <SearchBar/>
-        <h4>All teacher</h4>
         <div>
         <div className='teacherDetailHeader'>
-            <h5>teachers details</h5>
+            <h5>student's details</h5>
         </div>
         <div className='teacherContainer'>
            <table>
             <thead>
                 <tr>
                     <th>image</th>
-                    <th>reg no</th>
+                    <th>admin no</th>
                     <th>name</th>
                     <th>gender</th>
-                    <th>id</th>
-                    <th>email</th>
-                    <th>joining date</th>
+                    <th>class</th>
+                    <th>amount</th>
+                    <th>status</th>
                     <th>action</th>
                 </tr>
             </thead>
@@ -70,9 +48,9 @@ export default function Teachers() {
                     <td>c202020/19231</td>
                     <td>elias wanyama</td>
                     <td>male</td>
-                    <td>42846498</td>
-                    <td>eliwanyax@gmail.com</td>
-                    <td>20/5/2006</td>
+                    <td>2</td>
+                    <td>20000</td>
+                    <td><span>paid</span></td>
                     <td><button>view</button></td>
                 </tr>
                 <tr>
@@ -84,9 +62,9 @@ export default function Teachers() {
                     <td>c202020/19231</td>
                     <td>elias wanyama</td>
                     <td>male</td>
-                    <td>42846498</td>
-                    <td>eliwanyax@gmail.com</td>
-                    <td>20/5/2006</td>
+                    <td>3</td>
+                    <td>30000</td>
+                    <td><span>paid</span></td>
                     <td><button>view</button></td>
                 </tr>
                 <tr>
@@ -98,9 +76,9 @@ export default function Teachers() {
                     <td>c202020/19231</td>
                     <td>elias wanyama</td>
                     <td>male</td>
-                    <td>42846498</td>
-                    <td>eliwanyax@gmail.com</td>
-                    <td>20/5/2006</td>
+                    <td>4</td>
+                    <td>40000</td>
+                    <td><span>paid</span></td>
                     <td><button>view</button></td>
                 </tr>
                 <tr>
@@ -112,15 +90,15 @@ export default function Teachers() {
                     <td>c202020/19231</td>
                     <td>elias wanyama</td>
                     <td>male</td>
-                    <td>42846498</td>
-                    <td>eliwanyax@gmail.com</td>
-                    <td>20/5/2006</td>
+                    <td>4</td>
+                    <td>4000</td>
+                    <td><span>paid</span></td>
                     <td><button>view</button></td>
                 </tr>
             </tbody>
            </table>
         </div>
         </div>
-    </div>
+    </div> 
   )
 }
