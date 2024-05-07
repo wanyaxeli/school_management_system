@@ -1,6 +1,11 @@
 import React from 'react'
 import teacher from '../assets/admin.png'
+import { Link,useNavigate } from 'react-router-dom'
 export default function AllFeeRecord() {
+    const navigate=useNavigate()
+    const handleToSchoolFeeSytem=()=>{
+    navigate('/feesystem')
+    }
   return (
     <div className='allFeeRecordWrapper'>
         <div className='allfeeRecordContainer'>
@@ -19,6 +24,7 @@ export default function AllFeeRecord() {
                 </table>
               </form>
             </div>
+            <div><span className='feelink' onClick={handleToSchoolFeeSytem}>school fee system</span></div>
         </div>
         <div>
         <div className='teacherDetailHeader'>

@@ -9,6 +9,7 @@ import AllStudents from '../pages/AllStudents'
 import Classes from '../pages/Classes'
 import Dashboard from '../pages/Dashboard'
 import Fees from '../pages/Fees'
+import FeeSystem from '../pages/FeeSystem'
 import Home from '../pages/Home'
 import Results from '../pages/Results'
 import Staff from '../pages/Staff'
@@ -36,6 +37,7 @@ export default function AppRoutes() {
             <Route path='/expenses' element={<AllExpenses/>}/>
             <Route path='/addexpense' element={<AddExpense/>}/>
             <Route path='/results' element={<Results/>}/>
+            <Route path='/feesystem' element={<FeeSystem/>}/>
         </Route>
     </Routes>
   )

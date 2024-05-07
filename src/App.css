@@ -228,7 +228,7 @@ table td input{
   padding: 10px 15px;
   border-radius: 10px;
 }
-.studentSearchWrapper table td input,.classFormWrapper table td input,.teacherFormWrapper table td input,.feeSearchWrapper table td input,.recordsContainer table td input{
+.studentSearchWrapper table td input,.classFormWrapper table td input,.feeStystemWrapper table td input,.teacherFormWrapper table td input,.feeSearchWrapper table td input,.recordsContainer table td input{
   border: 1px solid #002047;
   background-color: #e8e8ee;
 }
@@ -265,6 +265,24 @@ table td input{
   color: #fff;
   text-transform: capitalize;
 }
+.feeStystemWrapper  table tr td:last-child{
+  text-align: right;
+}
+.feeStystemWrapper  table tr .lastrow {
+  text-align: left !important;
+}
+.feelink{
+  display: block;
+  text-align: start;
+  cursor: pointer;
+  font-size: .85rem;
+  text-transform: capitalize;
+  color: blue;
+  width: 13%;
+}
+.feelink:hover{
+  text-decoration: underline;
+}
 .allStudentTableWrapper,.teacherContainer{
   height: auto;
   width: 100%;
@@ -289,7 +307,7 @@ table td input{
 .allstudentContainer table tr:nth-child(odd) td,.classContainer table  tr:nth-child(odd) td,.teacherContainer table tr:nth-child(odd) td{
   background-color: #e8e8ee;
 }
-.allStudentTableWrapper button,.classFormWrapper button,.teacherContainer table button{
+.allStudentTableWrapper button,.feeSystemContainer table td button,.classFormWrapper button,.feeStystemWrapper button,.teacherContainer table button{
   padding: 5px 10px;
   cursor: pointer;
   border: none;
@@ -299,7 +317,7 @@ table td input{
   border-radius: 5px;
   text-transform: capitalize;
 }
-.allStudentTableWrapper button:hover,.classFormWrapper button:hover,.teacherContainer table button:hover{
+.allStudentTableWrapper button:hover,.feeSystemContainer table td button:hover,.classFormWrapper button:hover,.feeStystemWrapper button:hover,.teacherContainer table button:hover{
   background-color: #f05c2c;
 }
 .studentImgWrapper{
@@ -330,7 +348,7 @@ table td input{
   text-align: start;
   text-transform: capitalize;
 }
-.classFormWrapper{
+.classFormWrapper,.feeStystemWrapper {
   width: 100%;
   height: auto;
   margin: 20px 0;
@@ -338,10 +356,10 @@ table td input{
   padding: 20px 0;
   border-radius: 10px;
 }
-.classFormWrapper button{
+.classFormWrapper button,.feeStystemWrapper button{
   padding: 10px 20px;
 }
-.classFormWrapper button:first-child{
+.classFormWrapper button:first-child,.feeStystemWrapper button{
   margin-right: 20px;
 }
 .classContainer,.teacherFormWrapper{
@@ -473,3 +491,7 @@ text-align: right;
   border: 5px solid #002047;
   border-top: none;
 }
+.feeSystemContainer table th{
+  text-align: left;
+}
+

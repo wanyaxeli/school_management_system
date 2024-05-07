@@ -1,5 +1,4 @@
 import React from 'react'
-
 export default function AddFeeRecord() {
   return (
     <div className='addfeeRecordWrapper'>
