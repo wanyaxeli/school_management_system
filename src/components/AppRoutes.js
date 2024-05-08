@@ -2,15 +2,20 @@ import React from 'react'
 import {Route,Routes} from 'react-router-dom'
 import AddExpense from '../pages/AddExpense'
 import AddFeeRecord from '../pages/AddFeeRecord'
+import AddResults from '../pages/AddResults'
 import AddStudents from '../pages/AddStudents'
 import AllExpenses from '../pages/AllExpenses'
 import AllFeeRecord from '../pages/AllFeeRecord'
+import AllResults from '../pages/AllResults'
 import AllStudents from '../pages/AllStudents'
 import Classes from '../pages/Classes'
+import ClassResults from '../pages/ClassResults'
 import Dashboard from '../pages/Dashboard'
+import EditResults from '../pages/EditResults'
 import Fees from '../pages/Fees'
 import FeeSystem from '../pages/FeeSystem'
 import Home from '../pages/Home'
+import ReportSheet from '../pages/ReportSheet'
 import Results from '../pages/Results'
 import Staff from '../pages/Staff'
 import Students from '../pages/Students'
@@ -38,6 +43,11 @@ export default function AppRoutes() {
             <Route path='/addexpense' element={<AddExpense/>}/>
             <Route path='/results' element={<Results/>}/>
             <Route path='/feesystem' element={<FeeSystem/>}/>
+            <Route path='/Allresults' element={<AllResults/>}/>
+            <Route path='/reportSheet' element={<ReportSheet/>}/>
+            <Route path='/classResults' element={<ClassResults/>}/>
+            <Route path='/AddResults' element={<AddResults/>}/>
+            <Route path='/editResults' element={<EditResults/>}/>
         </Route>
     </Routes>
   )

@@ -194,7 +194,7 @@ table td input{
   height: auto;
   padding-top: 10px;
 }
-.registerBtnWrapper button{
+.registerBtnWrapper button,.resultsTableWrapper button{
   padding: 8px 15px;
   cursor: pointer;
   outline: brown;
@@ -205,7 +205,7 @@ table td input{
   text-align: center;
   text-transform: capitalize;
 }
-.registerBtnWrapper button:hover{
+.registerBtnWrapper button:hover ,.resultsTableWrapper button:hover{
   background-color: #f05c2c;
 }
 .allStudentWrapper{
@@ -494,4 +494,54 @@ text-align: right;
 .feeSystemContainer table th{
   text-align: left;
 }
+.editResults{
+  background-color: orange;
+}
+.allResultsWrapper,.ClassResultsWrapper,.addResultsWrapper{
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #e8e8ee;
+}
+.allResultsWrapper h3,.ClassResultsWrapper h3,.addResultsWrapper h3{
+  text-transform: capitalize;
+  text-align: left;
 
+}
+.reoprtSheetWrapper{
+  width: 100%;
+  height: 100%;
+  background-color: #e8e8ee;
+  padding: 10px;
+}
+.reportContainer{
+  max-width: 800px;
+  margin:auto;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  height: auto;
+}
+.reportContainer h3{
+  text-transform: uppercase;
+}
+.reportContainer p{
+  text-transform: capitalize;
+  font-size: 1.1rem;
+}
+.resultsTableWrapper table{
+  border: 1px solid #002047;
+  border-radius: 10px;
+  text-align: center;
+  border-collapse: collapse;
+}
+.resultsTableWrapper table tr td,.resultsTableWrapper table tr th{
+  border-bottom: 1px solid #002047;
+}
+.resultsTableWrapper table tr th{
+  padding: 10px 0;
+}
+.resultsTableWrapper button{
+  margin-top: 10px;
+}
