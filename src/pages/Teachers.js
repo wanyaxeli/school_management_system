@@ -22,16 +22,16 @@ export default function Teachers() {
                             <td><input type='text'/></td>
                         </tr>
                         <tr>
-                            <td>teacher's name</td>
-                            <td><input type='text'/></td>
                             <td>teacher number</td>
                             <td><input type='text'/></td>
-                        </tr>
-                        <tr>
                             <td>email</td>
                             <td><input type='email'/></td>
+                        </tr>
+                        <tr>
                             <td>date of appointment</td>
                             <td><input type='text'/></td>
+                            <td>subjects</td>
+                            <td><textarea/></td>
                         </tr>
                     </tbody>
                 </table>

@@ -18,18 +18,14 @@ export default function AddFeeRecord() {
                         <td><input type='type'/></td>
                     </tr>
                     <tr>
-                        <td>student class</td>
-                        <td><input type='type'/></td>
                         <td>fee term</td>
                         <td><input type='type'/></td>
-                    </tr>
-                    <tr>
                         <td>amount paid</td>
                         <td><input type='type'/></td>
-                        <td>teller no</td>
-                        <td><input type='type'/></td>
                     </tr>
                     <tr>
+                        <td>teller no</td>
+                        <td><input type='type'/></td>
                         <td>date</td>
                         <td><input type='date'/></td>
                     </tr>
