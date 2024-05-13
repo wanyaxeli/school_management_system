@@ -1,7 +1,39 @@
-import React from 'react'
+import axios from 'axios'
+import React,{useEffect,useState} from 'react'
 import worker from '../assets/admin.png'
 import SearchBar from '../components/SearchBar'
 export default function Workers() {
+    const initialState={
+        name:'',
+        id:'',
+        gender:'',
+        dob:'',
+        phone_number:'',
+        email:'',
+        date_of_appointment:'',
+        work:''
+    }
+    const [values,setValues]=useState(initialState)
+    const handleChange=(e)=>{
+     const{name,value}=e.target
+     setValues({...values,[name]:value})
+    }
+    const handleRegister=(e)=>{
+        e.preventDefault()
+        const{name}=values
+        const first_name=name.split(' ')[0]
+        const last_name=name.split(' ')[1]
+        const groupedData={first_name:first_name,last_name:last_name}
+        const newData={...values,...groupedData}
+        const url='http://127.0.0.1:8000/worker/'
+        axios.post(url,newData)
+        .then(res=>{
+            console.log(res.data)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
   return (
     <div className='teacherWrapper'>
         <h3>Employee registration</h3>
@@ -11,32 +43,32 @@ export default function Workers() {
                     <tbody>
                         <tr>
                             <td>employee's name</td>
-                            <td><input type='text'/></td>
+                            <td><input onChange={handleChange} name='name' type='text'/></td>
                             <td>ID number</td>
-                            <td><input type='text'/></td>
+                            <td><input onChange={handleChange} name='id' type='text'/></td>
                         </tr>
                         <tr>    
                             <td>gender</td>
-                            <td><input type='text'/></td>
+                            <td><input onChange={handleChange} name='gender' type='text'/></td>
                             <td>DOB</td>
-                            <td><input type='text'/></td>
+                            <td><input onChange={handleChange} name='dob' type='date'/></td>
                         </tr>
                         <tr>
                             <td>phone number</td>
-                            <td><input type='text'/></td>
+                            <td><input onChange={handleChange} name='phone_number' type='text'/></td>
                             <td>email</td>
-                            <td><input type='email'/></td>
+                            <td><input onChange={handleChange} name='email' type='email'/></td>
                         </tr>
                         <tr>
                             <td>date of appointment</td>
-                            <td><input type='text'/></td>
+                            <td><input onChange={handleChange} name='date_of_appointment' type='date'/></td>
                             <td>employee work</td>
-                            <td><input type='text'/></td>
+                            <td><input onChange={handleChange} name='work' type='text'/></td>
                         </tr>
                     </tbody>
                 </table>
                 <div>
-                    <button>register</button>
+                    <button onClick={handleRegister}>register</button>
                 </div>
             </form>
         </div>
