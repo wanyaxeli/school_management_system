@@ -1,6 +1,26 @@
-import React from 'react'
+import axios from 'axios'
+import React,{useState} from 'react'
 
 export default function FeeSystem() {
+    const initialState={
+        classFee:'',
+        totalAmount:'',
+        term_one: '',
+        term_two: '',
+        term_three: ''
+    }
+    const[data,setData]=useState(initialState)
+    const handleChange=(e)=>{
+    const{name,value}=e.target
+    setData({...data,[name]:value})
+    }
+    const handleToCreate=(e)=>{
+    e.preventDefault()
+    const url='http://127.0.0.1:8000//'
+    axios.post(url,data)
+    .then(res=>{console.log(res.data)})
+    .catch(error=>console.log(error))
+    }
   return (
     <div className='classesWrapper'>
     <h3>school fees system</h3>
@@ -10,24 +30,24 @@ export default function FeeSystem() {
             <tbody>
                 <tr>
                     <td>class name</td>
-                    <td><input type='text'/></td>
+                    <td><input onChange={handleChange} name='classFee' type='text'/></td>
                     <td>term one</td>
-                    <td><input type='text'/></td>
+                    <td><input onChange={handleChange} name='term_one' type='text'/></td>
                 </tr>
                 <tr>
                     <td>term two</td>
-                    <td><input type='text'/></td>
+                    <td><input onChange={handleChange} name='term_two' type='text'/></td>
                     <td>term three</td>
-                    <td><input type='text'/></td>
+                    <td><input onChange={handleChange} name='term_three' type='text'/></td>
                 </tr>
                 <tr>
                     <td>total amount</td>
-                    <td  className='lastrow'><input type='text'/></td>
+                    <td  className='lastrow'><input onChange={handleChange} name='totalAmount' type='text'/></td>
                 </tr>
             </tbody>
         </table>
         <div>
-            <button className='feeStystemBtn'>create</button>
+            <button className='feeStystemBtn' onClick={handleToCreate}>create</button>
         </div>
       </form>
     </div>

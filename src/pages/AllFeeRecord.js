@@ -1,7 +1,16 @@
-import React from 'react'
+import React,{useState} from 'react'
 import teacher from '../assets/admin.png'
 import { Link,useNavigate } from 'react-router-dom'
 export default function AllFeeRecord() {
+    const initialState={
+        regNo:'',
+        name:'',
+        term:'',
+        amount:'',
+        teller:'',
+        date:'',
+    }
+    const[data,setData]=useState()
     const navigate=useNavigate()
     const handleToSchoolFeeSytem=()=>{
     navigate('/feesystem')
