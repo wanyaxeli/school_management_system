@@ -16,7 +16,7 @@ export default function AddFeeRecord() {
     }
     const handleSavePayment=(e)=>{
      e.preventDefault()
-    const url='http://127.0.0.1:8000/feeSystem/'
+    const url='http://127.0.0.1:8000/feePayment/'
      axios.post(url,data)
      .then(res=>res.data)
      .catch(error=>console.log(error))

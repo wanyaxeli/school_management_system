@@ -30,7 +30,7 @@ export default function AddStudents() {
     console.log(data)
     try{
         const url='http://127.0.0.1:8000/student/'
-        axios.post(url,data,{
+        axios.post(url,newData,{
          headers:{'Content-Type':'Application/json'}
         })
         .then(res=>{

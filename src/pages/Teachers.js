@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import teacher from '../assets/admin.png'
 import SearchBar from '../components/SearchBar'
 import axios from 'axios'
@@ -14,6 +14,8 @@ export default function Teachers() {
         subjects:''
     }
     const [data,setData]=useState(initialState)
+    const [teacher,setTeacher]=useState([])
+    const url='http://127.0.0.1:8000/teacher/'
     const handleChange=(e)=>{
     const {name,value}=e.target
     setData({...data,[name]:value})
@@ -26,12 +28,25 @@ export default function Teachers() {
     const last_name=name.split(' ')[1]
     const groupedData={first_name:first_name,last_name:last_name}
     const newData={...data,...groupedData}
-    const url='http://127.0.0.1:8000/teacher/'
-    console.log(data)
     axios.post(url,newData)
-    .then(res=>console.log(res.data))
+    .then(res=>{
+        console.log(res.data)
+        setData(initialState)
+    })
     .catch(error=>console.log(error))
     }
+    function getteachers(){
+    axios.get(url)
+    .then(res=>{
+        setTeacher(res.data)
+    })
+    .catch(error=>{
+        console.log(error)
+    })
+    } 
+    useEffect(()=>{
+    getteachers()
+    },[])
   return (
     <div className='teacherWrapper'>
         <h3>Teacher registration</h3>
@@ -41,27 +56,27 @@ export default function Teachers() {
                     <tbody>
                         <tr>
                             <td>teacher number</td>
-                            <td><input onChange={handleChange} name='teacher_no' type='text'/></td>
+                            <td><input value={data.teacher_no} onChange={handleChange} name='teacher_no' type='text'/></td>
                             <td>teacher's name</td>
-                            <td><input onChange={handleChange} name='name' type='text'/></td>
+                            <td><input value={data.name} onChange={handleChange} name='name' type='text'/></td>
                         </tr>
                         <tr>    
                             <td>ID number</td>
-                            <td><input onChange={handleChange} name='id' type='text'/></td>
+                            <td><input value={data.id} onChange={handleChange} name='id' type='text'/></td>
                             <td>gender</td>
-                            <td><input onChange={handleChange} name='gender' type='text'/></td>
+                            <td><input value={data.gender} onChange={handleChange} name='gender' type='text'/></td>
                         </tr>
                         <tr>
                             <td>phone number</td>
-                            <td><input onChange={handleChange} name='phone_number' type='text'/></td>
+                            <td><input value={data.phone_number} onChange={handleChange} name='phone_number' type='text'/></td>
                             <td>email</td>
-                            <td><input onChange={handleChange} name='email' type='email'/></td>
+                            <td><input value={data.email} onChange={handleChange} name='email' type='email'/></td>
                         </tr>
                         <tr>
                             <td>date of appointment</td>
-                            <td><input onChange={handleChange} name='date_of_appointment' type='date'/></td>
+                            <td><input value={data.date_of_appointment} onChange={handleChange} name='date_of_appointment' type='date'/></td>
                             <td>subjects</td>
-                            <td><textarea onChange={handleChange} name='subjects'/></td>
+                            <td><textarea value={data.subjects} onChange={handleChange} name='subjects'/></td>
                         </tr>
                     </tbody>
                 </table>
@@ -81,7 +96,7 @@ export default function Teachers() {
             <thead>
                 <tr>
                     <th>image</th>
-                    <th>reg no</th>
+                    <th>teacher no</th>
                     <th>name</th>
                     <th>gender</th>
                     <th>id</th>
@@ -91,62 +106,24 @@ export default function Teachers() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                {teacher.map(item=>{
+                    return(
+                <tr key={item.id}>
                     <td>
                     <div className='studentImgWrapper'>
                     <img src={teacher}/>
                     </div>   
                     </td>
-                    <td>c202020/19231</td>
-                    <td>elias wanyama</td>
-                    <td>male</td>
-                    <td>42846498</td>
-                    <td>eliwanyax@gmail.com</td>
-                    <td>20/5/2006</td>
+                    <td>{item.employeeNo}</td>
+                    <td>{item.first_name} {item.last_name}</td>
+                    <td>{item.gender}</td>
+                    <td>{item.id}</td>
+                    <td>{item.email}</td>
+                    <td>{item. date_of_application}</td>
                     <td><button>view</button></td>
                 </tr>
-                <tr>
-                    <td>
-                    <div className='studentImgWrapper'>
-                    <img src={teacher}/>
-                    </div>  
-                    </td>
-                    <td>c202020/19231</td>
-                    <td>elias wanyama</td>
-                    <td>male</td>
-                    <td>42846498</td>
-                    <td>eliwanyax@gmail.com</td>
-                    <td>20/5/2006</td>
-                    <td><button>view</button></td>
-                </tr>
-                <tr>
-                    <td>
-                    <div className='studentImgWrapper'>
-                    <img src={teacher}/>
-                    </div>  
-                    </td>
-                    <td>c202020/19231</td>
-                    <td>elias wanyama</td>
-                    <td>male</td>
-                    <td>42846498</td>
-                    <td>eliwanyax@gmail.com</td>
-                    <td>20/5/2006</td>
-                    <td><button>view</button></td>
-                </tr>
-                <tr>
-                    <td>
-                    <div className='studentImgWrapper'>
-                    <img src={teacher}/>
-                    </div>  
-                    </td>
-                    <td>c202020/19231</td>
-                    <td>elias wanyama</td>
-                    <td>male</td>
-                    <td>42846498</td>
-                    <td>eliwanyax@gmail.com</td>
-                    <td>20/5/2006</td>
-                    <td><button>view</button></td>
-                </tr>
+                    )
+                })}
             </tbody>
            </table>
         </div>
