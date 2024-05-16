@@ -36,7 +36,7 @@ export default function AddStudents() {
         .then(res=>{
          console.log(res.data)
          setRes(res.data)
-         // setData(initialState)
+         setData(initialState)
         }) 
         .catch(error=>console.log(error))
     }catch(error){

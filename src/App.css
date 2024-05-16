@@ -235,6 +235,14 @@ table td input,table td textarea{
 table td textarea{
   padding: 5px 10px;
 }
+.FeestatusWrapper{
+  display: block;
+  background-color: #f05c2c;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
 .studentSearchWrapper .studentSearchBnt,.teacherFormWrapper button,.feeSearchWrapper table td button,.recordsContainer button{
   padding: 10px 15px;
   background-color: #002047;
@@ -247,6 +255,9 @@ table td textarea{
 }
 .studentSearchWrapper .studentSearchBnt:hover,.teacherFormWrapper button:hover,.feeSearchWrapper table td button:hover,.recordsContainer button:hover{
   background-color: #f05c2c;
+}
+.detailsWrapper{
+  margin-bottom: 25px;
 }
 .allstudentContainer{
   width: 100%;
