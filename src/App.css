@@ -208,7 +208,7 @@ table td input,table td textarea{
 .registerBtnWrapper button:hover ,.resultsTableWrapper button:hover{
   background-color: #f05c2c;
 }
-.allStudentWrapper{
+.allStudentWrapper,.StudentFeeDatailsWrapper{
   width: 100%;
   height: 100%;
  overflow-y: auto;
@@ -345,11 +345,11 @@ table td textarea{
   object-fit: cover;
   border-radius: 50%;
 }
-.allstudentContainer table tr:nth-child(odd) td:first-child,.classContainer table tr:nth-child(odd) td:first-child,.teacherContainer table tr:nth-child(odd) td:first-child{
+.allstudentContainer table tr:nth-child(odd) td:first-child,.paymentDetailsContainer table  td:first-child,.classContainer table tr:nth-child(odd) td:first-child,.teacherContainer table tr:nth-child(odd) td:first-child{
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
 }
-.allstudentContainer table tr:nth-child(odd) td:last-child,.classContainer table tr:nth-child(odd) td:last-child,.teacherContainer table tr:nth-child(odd) td:last-child{
+.allstudentContainer table tr:nth-child(odd) td:last-child,.paymentDetailsContainer table tr:nth-child(odd)td:last-child,.classContainer table tr:nth-child(odd) td:last-child,.teacherContainer table tr:nth-child(odd) td:last-child{
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -558,4 +558,89 @@ text-align: right;
 }
 .resultsTableWrapper button{
   margin-top: 10px;
+}
+.StudentFeeDatails{
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.StudentFeeDatails{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.StudentFeeDatailsWrapper{
+  width: 80%;
+  margin: auto;
+  overflow-y:visible;
+}
+.StudentFeeDatailsImgWrapper{
+  flex: .3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.StudentFeeDatailsContainer{
+  flex: .6;
+  height: 100%;
+  text-align: start;
+  padding-right: 10px;
+}
+.StudentFeeDatailsContainer table{
+  border-collapse: collapse;
+}
+.StudentFeeDatailsContainer table tr td{
+  padding: 7.6px 0;
+  border-bottom:1px solid #000 ;
+}
+.StudentFeeDatailsImg{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.StudentFeeDatailsImg img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.paymentDetailsWrapper{
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.paymentDetailsHeaderWrapper{
+  width: 100%;
+  background-color: #002047;
+  height: auto;
+  padding: 8px;
+  color: #fff;
+  text-align: left;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.paymentDetailsHeaderWrapper h4{
+  text-transform: capitalize;
+}
+.paymentDetailsContainer {
+  padding: 10px ;
+}
+.paymentDetailsContainer table th{
+  text-transform: capitalize;
+}
+.paymentDetailsContainer table{
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+.paymentDetailsContainer table tr:nth-child(odd) td{
+  background-color: #e8e8ee;
+}
+.paymentDetailsContainer table tr th{
+  padding-bottom: 10px;
 }

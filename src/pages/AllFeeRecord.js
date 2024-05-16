@@ -55,17 +55,6 @@ export default function AllFeeRecord() {
         console.log(error)
     })
     },[])
-    // useEffect(()=>{
-    //     const url='http://127.0.0.1:8000/Groupedclass/'
-    //     axios.get(url)
-    //     .then(res=>{
-    //         const data=res.data
-    //         console.log('dbGroerewruped',data)
-    //     })
-    //     .catch(error=>{
-    //         console.log(error)
-    //     })
-    // },[])
     useEffect(()=>{
     data.forEach(item=>{
     GetFeePayment(item.student.id)
@@ -87,28 +76,8 @@ export default function AllFeeRecord() {
             acc[stringNumber].push(item); // Push the current item into the corresponding category array
             return acc;
           }, {}); // Initial value of the accumulator is an empty object
-        // const studentsByClass = {};
-        // data.forEach(studentInfo => {
-        //     const { student, amount } = studentInfo;
-        //     const { Student_class, name, age } = student;
-        
-        //     // Create a new class key if it doesn't exist
-        //     if (!studentsByClass[Student_class]) {
-        //       studentsByClass[Student_class] = [];
-        //     }
-        
-        //     // Push student info into the corresponding class array
-        //     studentsByClass[Student_class].push({ name, age, amount });
-        //   });
-        const groupedItemsArray = Object.keys(groupedItems).map(key=>{
-            groupedItems[key].map(item=>{
-                console.log('adjjad',item)
-            })
-        })
-          console.log('grouped',groupedItemsArray)
-          setGroupedData(groupedItems)
+        setGroupedData(groupedItems)
     },[data])
-    console.log('groupeddata',groupedData)
     function TermModifyer(term){
         if (term === 1){
             return 'term_one'
@@ -120,12 +89,6 @@ export default function AllFeeRecord() {
         }
         else return term
      }
-    //  useEffect(()=>{
-    //  groupedData.map(item=>{
-    //     const flattenedArray = Object.values(item)
-    //     console.log('item',flattenedArray.flat(1))
-    //  })
-    //  },[groupedData])
     useEffect(()=>{
      data.forEach(item=>{
         const studentclass=item.student.Student_class
@@ -146,22 +109,13 @@ export default function AllFeeRecord() {
                 }
             }
            
-            // const object=Object.entries(item)
-            // if (object.includes(Schoolterm)){
-            //     console.log('jasdj',object)
-            // }
         })
      })
-    //  const Studentclass=student.student.Student_class
-    //  const studentClassFeeSystem= feeSystem.filter(item=>{
-    //     return item.classFee === Studentclass 
-    //  })
-    //  const StudentTerm=studentClassFeeSystem.filter(item=>{
-    //     return item.term === TermModifyer(term)
-    //  })
-    // console.log('term',studentClassFeeSystem)
-    // console.log('data',StudentTerm)
     },[amount,term])
+    const handleView=(item)=>{
+        console.log('id',item)
+        navigate('/studentFeeDetails',{state:item})
+       }
     const handleToSchoolFeeSytem=()=>{
     navigate('/feesystem')
     }
@@ -185,7 +139,8 @@ export default function AllFeeRecord() {
             </div>
             <div><span className='feelink' onClick={handleToSchoolFeeSytem}>school fee system</span></div>
         </div>
-          {Object.keys(groupedData).map(key=>{
+         {groupedData !=undefined?
+           Object.keys(groupedData).map(key=>{
             return(
                 <div className='detailsWrapper'>
                 <div className='teacherDetailHeader'>
@@ -196,7 +151,7 @@ export default function AllFeeRecord() {
                      groupedData[key].map(item=>{
                         return(
                             <>
-                            <p>class {key}</p>
+                            <p style={{textAlign:'start',paddingBottom:10}}>class {key}</p>
                              <table key={key}>
                                  <thead>
                                     <tr>
@@ -221,7 +176,7 @@ export default function AllFeeRecord() {
                                 <td>{item.student.Student_class}{item.student.stream}</td>
                                 <td>{item.amountPaid}</td>
                                 <td><span className='FeestatusWrapper'>{status}</span></td>
-                                <td><button>view</button></td>
+                                <td><button onClick={()=>handleView(item)}>view</button></td>
                             </tr> 
                                 </tbody>
                              </table>
@@ -232,7 +187,7 @@ export default function AllFeeRecord() {
                 </div>
                 </div>
             )
-          })}
+          }):<p>loading</p>}
     </div> 
   )
 }
