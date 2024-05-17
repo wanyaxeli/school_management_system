@@ -584,13 +584,15 @@ text-align: right;
   background-color: #fff;
   border-radius: 10px;
 }
-.StudentFeeDatails{
+.StudentFeeDatails,.StudentDetailsWrapper{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.StudentFeeDatails{
   margin-bottom: 20px;
 }
-.StudentFeeDatailsWrapper{
+.StudentFeeDatailsWrapper,.StudentDetailsWrapper{
   width: 80%;
   margin: auto;
   overflow-y:visible;
@@ -662,4 +664,10 @@ text-align: right;
 }
 .paymentDetailsContainer table tr th{
   padding-bottom: 10px;
+}
+.StudentDetailsWrapper{
+  height: 230px;
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 10px;
 }

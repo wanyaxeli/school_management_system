@@ -18,6 +18,7 @@ import Home from '../pages/Home'
 import ReportSheet from '../pages/ReportSheet'
 import Results from '../pages/Results'
 import Staff from '../pages/Staff'
+import StudentDetails from '../pages/StudentDetails'
 import StudentFeeDatails from '../pages/StudentFeeDatails'
 import Students from '../pages/Students'
 import Subject from '../pages/Subject'
@@ -50,6 +51,7 @@ export default function AppRoutes() {
             <Route path='/AddResults' element={<AddResults/>}/>
             <Route path='/editResults' element={<EditResults/>}/>
             <Route path='/studentFeeDetails' element={<StudentFeeDatails/>}/>
+            <Route path='/studentDetails' element={<StudentDetails/>}/>
         </Route>
     </Routes>
   )

@@ -57,7 +57,7 @@ export default function AddStudents() {
                         <td><input value={data.studentName} name='studentName' onChange={handleChange} type='text' /></td>
                     </tr>
                     <tr>
-                       <td>D.O.B</td>
+                       <td>Date of joining</td>
                         <td><input value={data.dob} name='dob' onChange={handleChange} type='date' /></td>
                        <td>Class</td>
                         <td><input value={data.class} name='class' onChange={handleChange} type='text' /></td>

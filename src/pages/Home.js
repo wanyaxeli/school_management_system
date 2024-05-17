@@ -21,7 +21,7 @@ export default function Home() {
             </div>
             <nav>
                 <ul>
-                    <li  className={splitPath[1]==='dashboard'?'active':""}><Link to='/dashboard'><i className="fa fa-users" aria-hidden="true"></i> dashboard</Link></li>
+                    <li  className={splitPath[1]==='dashboard'?'active':"" |splitPath[1]===''?'active':"" } ><Link to='/dashboard'><i className="fa fa-users" aria-hidden="true"></i> dashboard</Link></li>
                     <li className={splitPath[1]==='classes'?'active':""}><Link to="/classes" ><i className="fa fa-users" aria-hidden="true"></i> classes</Link></li>
                     <li className={splitPath[1]==='staff'?'active':""}><Link to="/staff"><i className="fa fa-users" aria-hidden="true"></i> staff</Link></li>
                     <li className={splitPath[1]==='subject'?'active':""}><Link to='/subject'><i className="fa fa-book" aria-hidden="true"></i> subjects</Link></li>
