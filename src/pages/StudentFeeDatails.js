@@ -11,7 +11,6 @@ export default function StudentFeeDatails() {
     const data = location.state
     setData([data])
     },[])
-    console.log('helllo world',data)
     function GetStudentPaymentDetails(pk){
         const url=`http://127.0.0.1:8000/SpecifcfeePayment/${pk}`
         axios.get(url)
@@ -30,7 +29,6 @@ export default function StudentFeeDatails() {
             const stringNumber=Student_class.toString().trim().toLowerCase()
             console.log( 'type',typeof stringNumber);
             console.log('redues',stringNumber)
-            // const studentClass=student.Student_class
             // Check if the category key exists in the accumulator object (acc)
             if (!acc[stringNumber]) {
               acc[stringNumber] = []; // Initialize an empty array for the category
