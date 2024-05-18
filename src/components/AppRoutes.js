@@ -22,8 +22,10 @@ import StudentDetails from '../pages/StudentDetails'
 import StudentFeeDatails from '../pages/StudentFeeDatails'
 import Students from '../pages/Students'
 import Subject from '../pages/Subject'
+import TeacherDetails from '../pages/TeacherDetails'
 import Teachers from '../pages/Teachers'
 import Workers from '../pages/Workers'
+import WorkersDetails from '../pages/WorkersDetails'
 export default function AppRoutes() {
   return (
     <Routes>
@@ -52,6 +54,8 @@ export default function AppRoutes() {
             <Route path='/editResults' element={<EditResults/>}/>
             <Route path='/studentFeeDetails' element={<StudentFeeDatails/>}/>
             <Route path='/studentDetails' element={<StudentDetails/>}/>
+            <Route path='/teacherDetails' element={<TeacherDetails/>}/>
+            <Route path='/WorkerDetails' element={<WorkersDetails/>}/>
         </Route>
     </Routes>
   )

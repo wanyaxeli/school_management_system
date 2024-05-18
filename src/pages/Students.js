@@ -19,7 +19,7 @@ export default function Students() {
        <i className="fa fa-plus-circle" aria-hidden="true"></i>
         </div>
         <div className='studentcard1 approveStudent'>
-        <h4>approve student</h4>
+        <h4>promote student</h4>
         <i className="fa fa-check-circle" aria-hidden="true"></i>
         </div>
         <div className='studentcard1 deleteStudent'>

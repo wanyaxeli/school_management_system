@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import teacher from '../assets/admin.png'
+import { useNavigate } from 'react-router-dom'
 import SearchBar from '../components/SearchBar'
 import axios from 'axios'
 export default function Teachers() {
@@ -15,6 +16,7 @@ export default function Teachers() {
     }
     const [data,setData]=useState(initialState)
     const [teacher,setTeacher]=useState([])
+    const navigate=useNavigate()
     const url='http://127.0.0.1:8000/teacher/'
     const handleChange=(e)=>{
     const {name,value}=e.target
@@ -44,6 +46,9 @@ export default function Teachers() {
         console.log(error)
     })
     } 
+    const handleViewTeacher =(item)=>{
+    navigate('/teacherDetails',{state:item})
+    }
     useEffect(()=>{
     getteachers()
     },[])
@@ -120,7 +125,7 @@ export default function Teachers() {
                     <td>{item.id}</td>
                     <td>{item.email}</td>
                     <td>{item. date_of_application}</td>
-                    <td><button>view</button></td>
+                    <td><button onClick={()=>handleViewTeacher(item)}>view</button></td>
                 </tr>
                     )
                 })}
