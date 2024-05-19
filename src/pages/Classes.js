@@ -26,6 +26,16 @@ export default function Classes() {
         console.log(error)
     })
     }
+useEffect(()=>{
+    const url='http://127.0.0.1:8000/results/'
+    axios.get(url)
+    .then(res=>{
+        console.log(res.data)
+    })
+    .catch(error=>{
+        console.log(error)
+    })
+},[])
 function getClasses(){
     axios.get(url)
     .then(res=>{

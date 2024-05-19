@@ -92,50 +92,47 @@ export default function AllStudents() {
                 <button className='studentSearchBnt' onClick={handleSearch}>search</button>
              </form>
             </div>
-           {groupedData!=undefined?
-            Object.keys(groupedData).map(key=>{
-                return(
-                    groupedData[key].map(item=>{
-                        return(
-                            <div key={key} className='allstudentContainer'>
-                            <div className='allStudentHeader'>
-                             <h4>Student details</h4>
-                            </div>
-                            <div className='allStudentTableWrapper'>
-                                <p style={{textAlign:'start',paddingBottom:10,textDecoration:'underline'}}>class {key}</p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>image</th>
-                                        <th>admission number</th>
-                                        <th>name</th>
-                                        <th>date of joining</th>
-                                        <th>class</th>
-                                        <th>action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div className='studentImgWrapper'>
-                                                <img src={user}/>
-                                            </div>
-                                        </td>
-                                        <td>{item.regNo}</td>
-                                        <td>{item.first_name} {item.last_name}</td>
-                                        <td>{item.dob}</td>
-                                        <td>{item.Student_class}{item.stream}</td>
-                                        <td><button onClick={()=>handleView(item)}>View</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            </div>
-                        </div>
-                        )
-                    })
-                )
-            })
-           :<p>loading</p>}
+            {groupedData ? (
+  Object.keys(groupedData).map(classKey => (
+    <div key={classKey} className='allstudentContainer'>
+      <div className='allStudentHeader'>
+        <h4>Class {classKey} Students</h4>
+      </div>
+      <div className='allStudentTableWrapper'>
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Admission Number</th>
+              <th>Name</th>
+              <th>Date of Joining</th>
+              <th>Class</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {groupedData[classKey].map(item => (
+              <tr key={item.id}>
+                <td>
+                  <div className='studentImgWrapper'>
+                    <img src={user} alt="Student"/>
+                  </div>
+                </td>
+                <td>{item.regNo}</td>
+                <td>{item.first_name} {item.last_name}</td>
+                <td>{item.dob}</td>
+                <td>{item.Student_class}{item.stream}</td>
+                <td><button onClick={() => handleView(item)}>View</button></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  ))
+) : (
+  <p>Loading...</p>
+)}
     </div>
   )
 }
