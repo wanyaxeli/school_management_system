@@ -10,11 +10,14 @@ import AllResults from '../pages/AllResults'
 import AllStudents from '../pages/AllStudents'
 import Classes from '../pages/Classes'
 import ClassResults from '../pages/ClassResults'
+import CreateAccount from '../pages/CreateAccount'
 import Dashboard from '../pages/Dashboard'
 import EditResults from '../pages/EditResults'
 import Fees from '../pages/Fees'
 import FeeSystem from '../pages/FeeSystem'
 import Home from '../pages/Home'
+import Login from '../pages/Login'
+import LoginWrapper from '../pages/LoginWrapper'
 import ReportSheet from '../pages/ReportSheet'
 import Results from '../pages/Results'
 import Staff from '../pages/Staff'
@@ -29,6 +32,11 @@ import WorkersDetails from '../pages/WorkersDetails'
 export default function AppRoutes() {
   return (
     <Routes>
+         <Route path='/login' element={<LoginWrapper/>}>
+          <Route index element={<Login/>}/>
+           <Route path='/login/signUp' element={<Login/>}/>
+           <Route path='/login/create' element={<CreateAccount/>}/>
+         </Route>
         <Route path='' element={<Home/>}>
             <Route path="/dashboard" element={<Dashboard/>}/>
             <Route index element={<Dashboard/>}/>
