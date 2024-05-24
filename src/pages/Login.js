@@ -1,7 +1,29 @@
-import React from 'react'
+import React,{useState} from 'react'
 import logo from "../assets/kaps.jpg"
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 export default function Login() {
+    const initialState={
+        name:'',
+        email:'',
+        password:''
+    }
+    const [values,setValues]=useState(initialState)
+    const handleLogin=(e)=>{
+    e.preventDefault()
+    const url='http://127.0.0.1:8000/api/token/'
+    axios.post(url,values)
+    .then(res=>{
+        console.log(res.data)
+    })
+    .catch(error=>{
+        console.log(error)
+    })
+    }
+    const handleChange=(e)=>{
+    const {name,value}=e.target
+    setValues({...values,[name]:value})
+    }
   return (
     <>
          <div className='signUpWrapper'>
@@ -19,19 +41,19 @@ export default function Login() {
                         <tbody>
                             <tr>
                                 <td>name</td>
-                                <td><input type='text'/></td>
+                                <td><input name='name' onChange={handleChange} value={values.name} type='text'/></td>
                             </tr>
                             <tr>
                                 <td>email</td>
-                                <td><input type='email'/></td>
+                                <td><input name='email' onChange={handleChange} value={values.email} type='email'/></td>
                             </tr>
                             <tr>
                                 <td>password</td>
-                                <td><input type='password'/></td>
+                                <td><input name='password' onChange={handleChange} value={values.password} type='password'/></td>
                             </tr>
                         </tbody>
                     </table>
-                    <button>login</button>
+                    <button onClick={handleLogin}>login</button>
                 </form>
                 <p>Don't have an account <span><Link to='/login/create'>create</Link></span> </p>
             </div>

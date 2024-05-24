@@ -738,8 +738,14 @@ text-align: right;
   text-decoration: none;
 }
 .CreateAccountWrapper{
-  width: 40%;
-  height: 60%;
+  width: 34%;
+  height: 90%;
   background-color: #fff;
   border-radius: 10px;
+}
+.errorWrapper p{
+  color: red;
+}
+.errorWrapper p::first-letter{
+  text-transform: capitalize;
 }
