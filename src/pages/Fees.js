@@ -3,16 +3,16 @@ import { useNavigate } from 'react-router'
 export default function Fees() {
     const navigate =useNavigate()
     const handleToFeeCollection=()=>{
-    navigate('/allfeeRecords')
+    navigate('/home/allfeeRecords')
     }
     const handleAddFeeRecord=()=>{
-    navigate('/addfeeRecords')
+    navigate('/home/addfeeRecords')
     }
     const handleToExpenses=()=>{
-        navigate('/expenses')
+        navigate('/home/expenses')
     }
     const handleToAddExpenses=()=>{
-        navigate('/addexpense')
+        navigate('/home/addexpense')
     }
   return (
     <div className='studentsWrapper students'>

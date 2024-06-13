@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import logo from "../assets/kaps.jpg"
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import axios from 'axios'
 export default function Login() {
     const initialState={
@@ -8,13 +8,17 @@ export default function Login() {
         email:'',
         password:''
     }
+    const navigate=useNavigate()
     const [values,setValues]=useState(initialState)
     const handleLogin=(e)=>{
     e.preventDefault()
     const url='http://127.0.0.1:8000/api/token/'
-    axios.post(url,values)
+    const {email,password}=values
+    const data={email:email,password:password}
+    axios.post(url,data)
     .then(res=>{
         console.log(res.data)
+        navigate('/home')
     })
     .catch(error=>{
         console.log(error)
@@ -55,7 +59,7 @@ export default function Login() {
                     </table>
                     <button onClick={handleLogin}>login</button>
                 </form>
-                <p>Don't have an account <span><Link to='/login/create'>create</Link></span> </p>
+                <p>Don't have an account <span><Link to='/create'>create</Link></span> </p>
             </div>
          </div>
     </>

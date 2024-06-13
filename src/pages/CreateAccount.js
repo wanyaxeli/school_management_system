@@ -37,7 +37,7 @@ export default function CreateAccount() {
     const data=res.data
     setError(data.error)
     setRes(data.success)
-    navigate('/login/signUp')
+    navigate('/signUp')
   })
   .catch(error=>{
     console.log(error)
@@ -86,7 +86,7 @@ export default function CreateAccount() {
                     </table>
                     <button onClick={handleCreate}>create </button>
                 </form>
-                <p>Already  have an account <span><Link to='/login/signUp'>sign in</Link></span> </p>
+                <p>Already  have an account <span><Link to='/signUp'>sign in</Link></span> </p>
             </div>
     </div>
   )

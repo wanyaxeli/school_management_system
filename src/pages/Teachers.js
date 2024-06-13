@@ -47,7 +47,7 @@ export default function Teachers() {
     })
     } 
     const handleViewTeacher =(item)=>{
-    navigate('/teacherDetails',{state:item})
+    navigate('/home/teacherDetails',{state:item})
     }
     useEffect(()=>{
     getteachers()

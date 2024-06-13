@@ -8,7 +8,7 @@ export default function AllResults() {
     const[groupedData,setGroupedData]=useState()
     const url='http://127.0.0.1:8000/results/'
     const handleToReport=(item)=>{
-        navigate('/reportSheet',{state:item})
+        navigate('/home/reportSheet',{state:item})
     }
     useEffect(()=>{
         axios.get(url)

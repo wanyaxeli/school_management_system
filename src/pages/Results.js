@@ -3,16 +3,16 @@ import { useNavigate } from 'react-router'
 export default function Results() {
     const navigate=useNavigate()
     const handleToResults=()=>{
-        navigate('/Allresults')
+        navigate('/home/Allresults')
     }
     const handleToClassResults=()=>{
-        navigate('/classResults')
+        navigate('/home/classResults')
     }
     const handleAddResults=()=>{
-        navigate('/AddResults')
+        navigate('/home/AddResults')
     }
     const handleEditResults=()=>{
-        navigate('/editResults')
+        navigate('/home/editResults')
     }
   return (
     <div className='studentsWrapper students'>

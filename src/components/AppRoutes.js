@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route,Routes} from 'react-router-dom'
+import {Route,Routes,Navigate} from 'react-router-dom'
 import AddExpense from '../pages/AddExpense'
 import AddFeeRecord from '../pages/AddFeeRecord'
 import AddResults from '../pages/AddResults'
@@ -32,38 +32,38 @@ import WorkersDetails from '../pages/WorkersDetails'
 export default function AppRoutes() {
   return (
     <Routes>
-         <Route path='/login' element={<LoginWrapper/>}>
+         <Route path='' element={<LoginWrapper/>}>
           <Route index element={<Login/>}/>
-           <Route path='/login/signUp' element={<Login/>}/>
-           <Route path='/login/create' element={<CreateAccount/>}/>
+           <Route path='/signUp' element={<Login/>}/>
+           <Route path='/create' element={<CreateAccount/>}/>
          </Route>
-        <Route path='' element={<Home/>}>
-            <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path='/home' element={<Home/>}>
+            <Route path="/home/dashboard" element={<Dashboard/>}/>
             <Route index element={<Dashboard/>}/>
-            <Route path='/students' element={<Students/>}/>
-            <Route path='/addstudents' element={<AddStudents/>}/>
-            <Route path='/allstudents' element={<AllStudents/>}/>
-            <Route path='/classes' element={<Classes/>}/>
-            <Route path='/subject' element={<Subject/>}/>
-            <Route path='/staff' element={<Staff/>}/>
-            <Route path='/teachers' element={<Teachers/>}/>
-            <Route path='/workers' element={<Workers/>}/>
-            <Route path='/fee' element={<Fees/>}/>
-            <Route path='/allfeeRecords' element={<AllFeeRecord/>}/>
-            <Route path='/addfeeRecords' element={<AddFeeRecord/>}/>
-            <Route path='/expenses' element={<AllExpenses/>}/>
-            <Route path='/addexpense' element={<AddExpense/>}/>
-            <Route path='/results' element={<Results/>}/>
-            <Route path='/feesystem' element={<FeeSystem/>}/>
-            <Route path='/Allresults' element={<AllResults/>}/>
-            <Route path='/reportSheet' element={<ReportSheet/>}/>
-            <Route path='/classResults' element={<ClassResults/>}/>
-            <Route path='/AddResults' element={<AddResults/>}/>
-            <Route path='/editResults' element={<EditResults/>}/>
-            <Route path='/studentFeeDetails' element={<StudentFeeDatails/>}/>
-            <Route path='/studentDetails' element={<StudentDetails/>}/>
-            <Route path='/teacherDetails' element={<TeacherDetails/>}/>
-            <Route path='/WorkerDetails' element={<WorkersDetails/>}/>
+            <Route path='/home/students' element={<Students/>}/>
+            <Route path='/home/addstudents' element={<AddStudents/>}/>
+            <Route path='/home/allstudents' element={<AllStudents/>}/>
+            <Route path='/home/classes' element={<Classes/>}/>
+            <Route path='/home/subject' element={<Subject/>}/>
+            <Route path='/home/staff' element={<Staff/>}/>
+            <Route path='/home/teachers' element={<Teachers/>}/>
+            <Route path='/home/workers' element={<Workers/>}/>
+            <Route path='/home/fee' element={<Fees/>}/>
+            <Route path='/home/allfeeRecords' element={<AllFeeRecord/>}/>
+            <Route path='/home/addfeeRecords' element={<AddFeeRecord/>}/>
+            <Route path='/home/expenses' element={<AllExpenses/>}/>
+            <Route path='/home/addexpense' element={<AddExpense/>}/>
+            <Route path='/home/results' element={<Results/>}/>
+            <Route path='/home/feesystem' element={<FeeSystem/>}/>
+            <Route path='/home/Allresults' element={<AllResults/>}/>
+            <Route path='/home/reportSheet' element={<ReportSheet/>}/>
+            <Route path='/home/classResults' element={<ClassResults/>}/>
+            <Route path='/home/AddResults' element={<AddResults/>}/>
+            <Route path='/home/editResults' element={<EditResults/>}/>
+            <Route path='/home/studentFeeDetails' element={<StudentFeeDatails/>}/>
+            <Route path='/home/studentDetails' element={<StudentDetails/>}/>
+            <Route path='/home/teacherDetails' element={<TeacherDetails/>}/>
+            <Route path='/home/WorkerDetails' element={<WorkersDetails/>}/>
         </Route>
     </Routes>
   )

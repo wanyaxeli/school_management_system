@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router'
 export default function Staff() {
     const navigate=useNavigate()
     const handleToTeachers=()=>{
-        navigate('/teachers')
+        navigate('/home/teachers')
     }
     const handleToWorkers=()=>{
-       navigate('/workers')
+       navigate('/home/workers')
     }
   return (
     <div className='studentsWrapper staffWrapper'>

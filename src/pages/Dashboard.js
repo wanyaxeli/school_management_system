@@ -13,22 +13,22 @@ import { useNavigate } from 'react-router'
 export default function Dashboard() {
     const navigate=useNavigate()
     const hadleToStudents=()=>{
-     navigate('/students')
+     navigate('/home/students')
     }
 const handleToClasses=()=>{
-    navigate('/classes')
+    navigate('/home/classes')
 }
 const handleToSubject=()=>{
-    navigate('/subject')
+    navigate('/home/subject')
 }
 const handleToStaff=()=>{
-    navigate('/staff')
+    navigate('/home/staff')
 }
 const handleToFees=()=>{
-    navigate('/fee')
+    navigate('/home/fee')
 }
 const handleToResults=()=>{
-    navigate('/results')
+    navigate('/home/results')
 }
   return (
     <div className='dashboardWrapper'>
