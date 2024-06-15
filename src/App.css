@@ -749,3 +749,56 @@ text-align: right;
 .errorWrapper p::first-letter{
   text-transform: capitalize;
 }
+.ProfileWrapper{
+ margin: 15px auto;
+ width: 90%;
+ height: auto;
+ background-color: #fff;
+ border-radius: 10px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 15px 10px;
+}
+.profileImgWrapper{
+   flex: .3;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.profileImgContainer{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.profileImgContainer img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profileDetailsWrapper{
+  flex: .65;
+  height: 100%;
+}
+.profileDetailsWrapper table{
+  border-collapse: collapse;
+}
+.profileDetailsWrapper table tr td{
+  border-bottom: 1px solid #002047;
+}
+.profileDetailsWrapper button{
+  padding: 10px 15px ;
+  background-color: #002047;
+  color: #fff;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+.profileDetailsWrapper button:hover{
+  background-color: #f05c2c;
+}

@@ -18,6 +18,8 @@ export default function Login() {
     axios.post(url,data)
     .then(res=>{
         console.log(res.data)
+        const {access}=res.data
+        localStorage.setItem('token',access)
         navigate('/home')
     })
     .catch(error=>{

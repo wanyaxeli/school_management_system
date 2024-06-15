@@ -18,6 +18,7 @@ import FeeSystem from '../pages/FeeSystem'
 import Home from '../pages/Home'
 import Login from '../pages/Login'
 import LoginWrapper from '../pages/LoginWrapper'
+import Profile from '../pages/Profile'
 import ReportSheet from '../pages/ReportSheet'
 import Results from '../pages/Results'
 import Staff from '../pages/Staff'
@@ -64,6 +65,7 @@ export default function AppRoutes() {
             <Route path='/home/studentDetails' element={<StudentDetails/>}/>
             <Route path='/home/teacherDetails' element={<TeacherDetails/>}/>
             <Route path='/home/WorkerDetails' element={<WorkersDetails/>}/>
+            <Route path='/home/profile' element={<Profile/>}/>
         </Route>
     </Routes>
   )

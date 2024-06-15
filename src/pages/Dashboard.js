@@ -30,9 +30,12 @@ const handleToFees=()=>{
 const handleToResults=()=>{
     navigate('/home/results')
 }
+const handleToProfile=()=>{
+    navigate('/home/profile')
+}
   return (
     <div className='dashboardWrapper'>
-        <div className='card'>
+        <div className='card' onClick={handleToProfile}>
             <h4>my profile</h4>
             <div className='cardImgWrapper'>
                 <img src={admin}/>
