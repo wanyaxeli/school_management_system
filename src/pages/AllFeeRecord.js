@@ -114,10 +114,10 @@ export default function AllFeeRecord() {
     },[amount,term])
     const handleView=(item)=>{
         console.log('id',item)
-        navigate('/studentFeeDetails',{state:item})
+        navigate('/home/studentFeeDetails',{state:item})
        }
     const handleToSchoolFeeSytem=()=>{
-    navigate('/feesystem')
+    navigate('/home/feesystem')
     }
   return (
     <div className='allFeeRecordWrapper'>
@@ -140,54 +140,48 @@ export default function AllFeeRecord() {
             <div><span className='feelink' onClick={handleToSchoolFeeSytem}>school fee system</span></div>
         </div>
          {groupedData !=undefined?
-           Object.keys(groupedData).map(key=>{
-            return(
-                <div className='detailsWrapper'>
-                <div className='teacherDetailHeader'>
-                    <h5>student's details</h5>
-                </div>
-                <div className='teacherContainer'>
-                 {
-                     groupedData[key].map(item=>{
-                        return(
-                            <>
-                            <p style={{textAlign:'start',paddingBottom:10}}>class {key}</p>
-                             <table key={key}>
-                                 <thead>
-                                    <tr>
-                                        <th>image</th>
-                                        <th>admin no</th>
-                                        <th>name</th>
-                                        <th>class</th>
-                                        <th>amount</th>
-                                        <th>status</th>
-                                        <th>action</th>
+           Object.keys(groupedData).map(key => {
+            return (
+                <div className='detailsWrapper' key={key}>
+                    <div className='teacherDetailHeader'>
+                        <h5>Student's Details</h5>
+                    </div>
+                    <div className='teacherContainer'>
+                        <p style={{ textAlign: 'start', paddingBottom: 10 }}>Class {key}</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Admin No</th>
+                                    <th>Name</th>
+                                    <th>Class</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {groupedData[key].map(item => (
+                                    <tr key={item.student.regNo}>
+                                        <td>
+                                            <div className='studentImgWrapper'>
+                                                <img src={teacher} alt='Student' />
+                                            </div>
+                                        </td>
+                                        <td>{item.student.regNo}</td>
+                                        <td>{item.student.first_name} {item.student.last_name}</td>
+                                        <td>{item.student.Student_class}{item.student.stream}</td>
+                                        <td>{item.amountPaid}</td>
+                                        <td><span className='FeestatusWrapper'>{status}</span></td>
+                                        <td><button onClick={() => handleView(item)}>View</button></td>
                                     </tr>
-                                </thead> 
-                                <tbody>
-                            <tr>
-                                <td>
-                                <div className='studentImgWrapper'>
-                                <img src={teacher}/>
-                                </div>   
-                                </td>
-                                <td>{item.student.regNo}</td>
-                                <td>{item.student.first_name} {item.student.last_name}</td>
-                                <td>{item.student.Student_class}{item.student.stream}</td>
-                                <td>{item.amountPaid}</td>
-                                <td><span className='FeestatusWrapper'>{status}</span></td>
-                                <td><button onClick={()=>handleView(item)}>view</button></td>
-                            </tr> 
-                                </tbody>
-                             </table>
-                            </>
-                        )
-                     })
-                 }
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                </div>
-            )
-          }):<p>loading</p>}
+            );
+        }):<p>loading</p>}
     </div> 
   )
 }

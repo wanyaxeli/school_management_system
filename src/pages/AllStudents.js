@@ -12,6 +12,7 @@ export default function AllStudents() {
     const [data,setData]=useState()
     const [query,setQuery]=useState(initialState)
     const [search,setSearch]=useState([])
+    const [searchError,setSearchError]=useState('')
     const [groupedData,setGroupedData]=useState()
     const navigate =useNavigate()
     useEffect(()=>{
@@ -28,7 +29,7 @@ export default function AllStudents() {
     },[])
     const handleChange=(e)=>{
         const {value,name}=e.target
-        setQuery({...query,[name]:value})
+        setQuery({...query,[name]:value.toLowerCase()})
     }
     useEffect(()=>{
        if(data!=undefined){
@@ -55,15 +56,27 @@ export default function AllStudents() {
     const handleSearch=(e)=>{
         e.preventDefault()
         const url='http://127.0.0.1:8000/search/'
-        const {regNo}=query
-        axios.post(url,{regNo:regNo})
+        const {regNo,name}=query
+        const splitName= name.split(' ')
+        const data={regNo:regNo,first_name:splitName[0],last_name:splitName[1]}
+        axios.post(url,data)
         .then(res=>{
             console.log(res.data)
-            setSearch([res.data])
+            const data= res.data
+            if (data.data){
+              setSearch(data.data)
+            }
+            if (data.error){
+              setSearchError(data.error)
+            }
         })
         .catch(error=>console.log(error))
     }
-    console.log('grouped',groupedData)
+  useEffect(()=>{
+  if (searchError){
+    searchError('')
+  }
+  },[search])
   return (
     <div className='allStudentWrapper'>
         <h3>all student</h3>
@@ -91,8 +104,50 @@ export default function AllStudents() {
                 </table>
                 <button className='studentSearchBnt' onClick={handleSearch}>search</button>
              </form>
+            {searchError? <p style={{color:'red'}}>{searchError}</p>:''}
             </div>
-            {groupedData ? (
+           
+           
+           {search.length > 0?
+           search.map(item=>{
+            return (
+              <div key={item.id} className='allstudentContainer'>
+                 <div className='allStudentHeader'>
+                 <h4> Searched Student</h4>
+                 </div>
+                 <div className='allStudentTableWrapper'>
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Admission Number</th>
+                <th>Name</th>
+                <th>Date of Joining</th>
+                <th>Class</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>
+                    <div className='studentImgWrapper'>
+                      <img src={user} alt="Student"/>
+                    </div>
+                  </td>
+                  <td>{item.regNo}</td>
+                  <td>{item.first_name} {item.last_name}</td>
+                  <td>{item.dob}</td>
+                  <td>{item.Student_class}{item.stream}</td>
+                  <td><button onClick={() => handleView(item)}>View</button></td>
+                </tr>
+            </tbody>
+          </table>
+      </div>
+              </div>
+            )
+           }):
+           
+            groupedData ? (
   Object.keys(groupedData).map(classKey => (
     <div key={classKey} className='allstudentContainer'>
       <div className='allStudentHeader'>
